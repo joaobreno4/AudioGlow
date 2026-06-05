@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: audioglow
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 25MB
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+external-ai:
+  openai:
+    base-url: https://api.openai.com
+    api-key: ${OPENAI_API_KEY:}
+    transcription-model: whisper-1
+  gemini:
+    base-url: https://generativelanguage.googleapis.com
+    api-key: ${GEMINI_API_KEY:}
+    model: gemini-1.5-flash
