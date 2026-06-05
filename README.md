@@ -178,3 +178,5 @@ mvn test
 ```
 
 Os testes unitários validam o fluxo principal do caso de uso, o envio do texto transcrito ao Gemini, a propagação de falhas do Whisper e o registro das métricas customizadas.
+
+Criado por João Breno
